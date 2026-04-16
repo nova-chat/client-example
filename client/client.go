@@ -10,17 +10,17 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/nova-chat/novaproto"
+	"github.com/nova-chat/novaproto/dhellman"
 	"github.com/nova-chat/novaproto/serializer"
 )
 
 type Client struct {
-	Id            uuid.UUID
-	EncryptionKey []byte
+	Id uuid.UUID
 
-	DHPrivate any
+	dhPrivate *dhellman.KeyPair
 
 	conn         net.Conn
-	WireStream   novaproto.Wire
+	WireStream   *novaproto.NovaWireStreamCipher
 	PacketStream *novaproto.RoutedPacketStream
 
 	routes    map[uint64]RawPacketHandler
@@ -42,6 +42,7 @@ func NewClient(addr string) (*Client, error) {
 	cli.PacketStream = novaproto.NewRoutedPacketStream(novaproto.NewPacketStream(cli.WireStream))
 
 	ServerDHPublic.ClientRegister(cli, cli.dhCl)
+	ServerEncPong.ClientRegister(cli, cli.encPong)
 
 	return cli, nil
 }

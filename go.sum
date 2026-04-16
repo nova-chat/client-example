@@ -14,3 +14,5 @@ github.com/nova-chat/novaproto v1.1.0 h1:9ElldSWrPQuMV1q8uZK6NUw3GZ3S1V2tgjdgJXh
 github.com/nova-chat/novaproto v1.1.0/go.mod h1:4sTnhGDNF12RKbwtigebyaCTmXDipa83GhXwlSCdyf0=
 github.com/nova-chat/novaproto v1.2.0 h1:M2pmMBFfCvdw9hgt/ValFawff1bVfxsnMp7pjyU7GKk=
 github.com/nova-chat/novaproto v1.2.0/go.mod h1:Fw5dLtOKvTBmOyVf6Gn2QUAE5tVvLA0blWEuG9gse4s=
+github.com/nova-chat/novaproto v1.2.2 h1:iPrSodAg1anQs0vY+gDMeypoaTeVqRWoBNobHM16mE4=
+github.com/nova-chat/novaproto v1.2.2/go.mod h1:Fw5dLtOKvTBmOyVf6Gn2QUAE5tVvLA0blWEuG9gse4s=
